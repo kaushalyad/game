@@ -5,7 +5,7 @@
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.10);
     padding: 2px;
-    min-width: min(93vw, calc(51px * var(--board-dim)), 1000px);
+    min-width: min(93vw, calc(51px * var(--board-dim)), 100%);
     min-height: min(93vw, calc(51px * var(--board-dim)), 1000px);
     position: relative;
 }
@@ -26,4 +26,21 @@
 
 .board-absolute {
     position: relative;
+}
+
+@media (max-width: 600px) {
+    .board {
+        max-width: 360px;
+        padding: 1px;
+        gap: "2px";
+    }
+
+    .board-place {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .board-absolute {
+        max-width: 360px;
+    }
 }

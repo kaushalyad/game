@@ -107,7 +107,6 @@ const App = () => {
           <input
             id="board-dim"
             type="number"
-            // value={boardDim}
             defaultValue={boardDim}
             onChange={handleChange}
             style={{ width: 60 }}

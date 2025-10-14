@@ -1,34 +1,35 @@
 body {
-  background: #faf8ef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background: #faf8ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .app-container {
-  text-align: center;
+    text-align: center;
 }
 
 header {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
 .new-game-btn {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #8f7a66;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #8f7a66;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .new-game-btn:hover {
-  background: #9f8b76;
+    background: #9f8b76;
 }
+

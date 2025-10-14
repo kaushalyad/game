@@ -17,3 +17,23 @@ A fully functional **web-based 2048 game** built using **ReactJS**. Merge tiles 
 
 ## 📂 Project Structure
 
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v16+ recommended)
+- **npm** or **yarn**
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/kaushalyad/game.git
+cd game
+npm install
+npm run dev
+http://localhost:5173
