@@ -1,0 +1,29 @@
+.board {
+    display: grid;
+    gap: 6px;
+    background: #bbada0;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.10);
+    padding: 2px;
+    min-width: min(93vw, calc(51px * var(--board-dim)), 1000px);
+    min-height: min(93vw, calc(51px * var(--board-dim)), 1000px);
+    position: relative;
+}
+
+.board-place {
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid #d6cfc4;
+    border-radius: 14px;
+    width: var(--tile-size);
+    height: var(--tile-size);
+    left: var(--x);
+    top: var(--y);
+    background: transparent;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.board-absolute {
+    position: relative;
+}

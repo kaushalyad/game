@@ -1,0 +1,61 @@
+.score-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.score-box {
+    background: #bbada0;
+    color: #fff;
+    padding: 5px 7px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 60px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.score-box h4 {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #eee4da;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.score-box p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.current-score p {
+    color: green;
+}
+
+/* 🎯 Floating +Score Animation (attached only to current score) */
+.score-wrapper {
+    position: relative;
+}
+
+.score-gain {
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    color: #27ae60;
+    font-size: 1.2rem;
+    font-weight: 700;
+    opacity: 0;
+    animation: floatUp 0.8s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-45px);
+    }
+}

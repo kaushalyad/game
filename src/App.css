@@ -1,0 +1,160 @@
+.app-header {
+  height: 250px;
+  /* Set proper height for header */
+  width: 98vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/2048_header_logo.png');
+  /* Correct path */
+  background-size: contain;
+  /* Make image fit inside div */
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+
+/* 🎮 Overall Game Layout */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  border: 4px solid white;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* 🏷️ Header & Titles */
+.game-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #776e65;
+  text-shadow: 2px 2px 4px #d1c7a5;
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  color: #8f7a66;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* 🧮 Score & Buttons Section */
+.scoreboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 450px;
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+
+/* 🎛️ Game Controls */
+.game-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.game-controls button {
+  background-color: #8f7a66;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.game-controls button:hover {
+  background-color: #a68a73;
+  transform: scale(1.05);
+}
+
+/* 📝 How to Play */
+.play-instructions {
+  font-size: 0.95rem;
+  color: #776e65;
+  margin-top: 15px;
+  max-width: 550px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.play-instructions span {
+  font-size: 1rem;
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* Input field and label styles */
+input#board-dim {
+  background: #f8f4e6;
+  color: #3c3a32;
+  border: 2px solid #bbada0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  padding: 4px 10px;
+  outline: none;
+}
+
+input#board-dim:focus {
+  border-color: #edc22e;
+  background: #fffbe6;
+}
+
+label[for="board-dim"] {
+  color: #776e65;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-right: 6px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  .game-title {
+    font-size: 2.2rem;
+  }
+
+  .game-subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .scoreboard-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .game-controls {
+    justify-content: center;
+  }
+
+  .play-instructions {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
