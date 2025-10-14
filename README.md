@@ -1,9 +1,8 @@
 # 2048-in-react
 
 
-This is a fully functional clone of the popular 2048 game, built using Reactjs. Not only does it offer smooth animations and works on mobile devices, but it's also a fantastic learning resource for developers. Whether you're here to play, contribute, or learn, this project has something for everyone.
+This is a fully functional clone of the popular 2048 game, built using Reactjs.
 
-If you're interested in mastering React by building this game step-by-step, check out the course linked below!
 
 ## [Play 2048 💥](https://kaushalyad.github.io/game/)
 
