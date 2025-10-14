@@ -1,22 +1,20 @@
 .app-header {
-  height: 250px;
-  /* Set proper height for header */
-  width: 98vw;
+  height: 150px;
+  width: 99vw;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: url('./assets/2048_header_logo.png');
-  /* Correct path */
   background-size: contain;
-  /* Make image fit inside div */
   background-repeat: no-repeat;
   background-position: center;
   color: white;
   font-size: 2rem;
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  /* margin-top: 2px; */
 }
+
 
 
 /* 🎮 Overall Game Layout */

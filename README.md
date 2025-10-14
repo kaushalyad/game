@@ -14,9 +14,10 @@ This is a fully functional clone of the popular 2048 game, built using Reactjs.
 
 _Easily set up a local development environment!_
 
-Just start dev server on [localhost](http://localhost:5173/game):
+Just start dev server on [http://localhost:5173/game](http://localhost:5173/game):
 
-- clone -`cd game `
+- clone
+- `cd game `
 - `npm install`
 - `npm run dev`
 
