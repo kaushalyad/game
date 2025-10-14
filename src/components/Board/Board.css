@@ -30,14 +30,16 @@
 
 @media (max-width: 600px) {
     .board {
-        max-width: 360px;
-        padding: 1px;
-        gap: "2px";
+        min-width: 410px;
+        padding: 10px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
     }
 
     .board-place {
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 55px;
+        max-height: 55px;
     }
 
     .board-absolute {

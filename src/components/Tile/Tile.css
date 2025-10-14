@@ -129,7 +129,7 @@
     .tile {
         font-size: clamp(0.5rem, 2.5vw, 2.2rem);
         padding: clamp(1px, 0.5vw, 8px);
-        max-width: 50px;
-        max-height:50px;
+        max-width: 55px;
+        max-height: 55px;
     }
 }

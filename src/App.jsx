@@ -82,7 +82,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <>
       <div className="app-header">
       </div>
       <div className="game-container">
@@ -133,7 +133,7 @@ const App = () => {
           two tiles with the same number touch, they merge into one. Get 2048 to win!
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

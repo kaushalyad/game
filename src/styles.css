@@ -3,6 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 100vw;
 }
 
 .app-container {
@@ -32,4 +33,3 @@ h1 {
 .new-game-btn:hover {
     background: #9f8b76;
 }
-
