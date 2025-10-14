@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Board from "./components/Board/Board";
 import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
 import GameOverModal from "./components/GameOverModal/GameOverModal";
+import { toast } from "react-toastify";
 import {
   generateEmptyBoard,
   addRandomTile,
@@ -75,8 +76,30 @@ const App = () => {
   const handleChange = (e) => {
     // Allow user to type anything temporarily
     if (e.target.value === 'undefined') setBoardDim(4);
-    else if (Number(e.target.value) < 4) setBoardDim(4);
-    else if (Number(e.target.value) > 10) setBoardDim(10);
+    else if (Number(e.target.value) < 2) {
+      toast.error("Please enter box size more than 1", {
+        position: "top-center", // top-left, top-right, bottom-left, bottom-right
+        autoClose: 3000,        // automatically close after 3 seconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",       // optional: "light", "dark", "colored"
+      });
+      setBoardDim(4);
+    }
+    else if (Number(e.target.value) > 10) {
+      toast.error("Please enter box size less than 11", {
+        position: "top-center", // top-left, top-right, bottom-left, bottom-right
+        autoClose: 3000,        // automatically close after 3 seconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",       // optional: "light", "dark", "colored"
+      });
+      setBoardDim(10);
+    }
     else setBoardDim(Number(e.target.value))
   };
 
@@ -109,7 +132,7 @@ const App = () => {
             type="number"
             defaultValue={boardDim}
             onChange={handleChange}
-            style={{ width: 60 }}
+            style={{ width: 40 }}
           />
           <span style={{ marginLeft: 8, color: "black" }}>{boardDim} x {boardDim}</span>
         </div>
