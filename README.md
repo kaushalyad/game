@@ -1,8 +1,6 @@
 # 2048-in-react
 
-
 This is a fully functional clone of the popular 2048 game, built using Reactjs.
-
 
 ## [Play 2048 💥](https://kaushalyad.github.io/game/)
 
