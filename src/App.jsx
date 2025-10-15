@@ -3,6 +3,8 @@ import Board from "./components/Board/Board";
 import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
 import GameOverModal from "./components/GameOverModal/GameOverModal";
 import { toast } from "react-toastify";
+import { useSwipeable } from "react-swipeable";
+
 import {
   generateEmptyBoard,
   addRandomTile,
@@ -16,14 +18,14 @@ const App = () => {
   const [board, setBoard] = useState(generateEmptyBoard(boardDim));
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(
-    parseInt(localStorage.getItem("bestScore") || "0")
+    parseInt(localStorage.getItem("bestScore") || "0"),
   );
   const [gameOver, setGameOver] = useState(false);
   const [isWin, setIsWin] = useState(false);
   const [scoreGain, setScoreGain] = useState(0);
   const [showGain, setShowGain] = useState(false);
-  const [boardSize, setBoardSize] = useState(400); // px
-
+  const [boardSize, setBoardSize] = useState(450); // px
+  // console.log(window.innerWidth)
   const startNewGame = () => {
     let newBoard = addRandomTile(addRandomTile(generateEmptyBoard(boardDim)));
     setBoard(newBoard);
@@ -37,7 +39,12 @@ const App = () => {
   useEffect(() => {
     startNewGame();
   }, [boardDim]);
-
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleMove("ArrowLeft"),
+    onSwipedRight: () => handleMove("ArrowRight"),
+    onSwipedUp: () => handleMove("ArrowUp"),
+    onSwipedDown: () => handleMove("ArrowDown"),
+  });
   useEffect(() => {
 
     const handleKeyDown = (e) => {
@@ -45,7 +52,7 @@ const App = () => {
       const active = document.activeElement;
 
       if (active && active.id === "board-dim") return;
-      
+
       if (gameOver) return;
 
       const directions = { ArrowLeft: 0, ArrowUp: 1, ArrowRight: 2, ArrowDown: 3 };
@@ -145,8 +152,9 @@ const App = () => {
           <span style={{ marginLeft: 8, color: "black" }}>{boardDim} x {boardDim}</span>
         </div>
 
-        <Board board={board} boardSize={boardSize} boardDim={boardDim} />
-
+        <div {...handlers}>
+          <Board board={board} boardSize={boardSize} boardDim={boardDim} />
+        </div>
         {(gameOver || isWin) && (
           <GameOverModal
             isWin={isWin}

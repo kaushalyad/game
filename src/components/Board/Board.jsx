@@ -3,7 +3,8 @@ import Tile from "../Tile/Tile";
 import "./Board.css";
 
 const Board = ({ board, boardSize, boardDim }) => {
-    const TILE_GAP = 10; // px
+
+    let TILE_GAP = 10; // px
 
     const TILE_SIZE = (boardSize - TILE_GAP * (boardDim + 1)) / boardDim;
 
