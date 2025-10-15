@@ -1,4 +1,6 @@
 let tileIdCounter = 1;
+
+
 export const generateEmptyBoard = (dim = 4) => {
     return Array.from({ length: dim }, (_, row) =>
         Array(dim).fill().map((_, col) => ({
@@ -43,6 +45,8 @@ export const addRandomTile = (board) => {
     return board;
 };
 
+
+
 export const moveBoard = (board, direction) => {
     let dim = board.length;
     let prevBoard = board.map((row, i) => row.map((tile, j) => ({ ...tile })));
@@ -60,6 +64,8 @@ export const moveBoard = (board, direction) => {
     });
     return [newBoard, moved, scoreGain];
 };
+
+
 
 const slideLeft = (board, dim) => {
     let moved = false;
@@ -132,6 +138,9 @@ const slideLeft = (board, dim) => {
     return [newBoard, moved, scoreGain];
 };
 
+
+
+
 const rotateBoard = (board, times) => {
     let newBoard = board.map((r) => [...r]);
     for (let t = 0; t < times; t++) {
@@ -141,6 +150,9 @@ const rotateBoard = (board, times) => {
     }
     return newBoard;
 };
+
+
+
 
 export const checkGameOver = (board) => {
     let dim = board.length;

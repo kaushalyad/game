@@ -39,11 +39,15 @@ const App = () => {
   }, [boardDim]);
 
   useEffect(() => {
+
     const handleKeyDown = (e) => {
       // Prevent board movement if input is focused
       const active = document.activeElement;
+
       if (active && active.id === "board-dim") return;
+      
       if (gameOver) return;
+
       const directions = { ArrowLeft: 0, ArrowUp: 1, ArrowRight: 2, ArrowDown: 3 };
       if (!(e.key in directions)) return;
       console.log(e);
@@ -71,8 +75,12 @@ const App = () => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
+
     return () => window.removeEventListener("keydown", handleKeyDown);
+
   }, [board, score, bestScore, gameOver]);
+
+
   const handleChange = (e) => {
     // Allow user to type anything temporarily
     if (e.target.value === 'undefined') setBoardDim(4);
@@ -109,9 +117,9 @@ const App = () => {
       <div className="app-header">
       </div>
       <div className="game-container">
-        <div className="game-header">
-          {/* <div className="game-title">2048 GAME</div> */}
-        </div>
+        {/* <div className="game-header">
+          <div className="game-title">2048 GAME</div>
+        </div> */}
 
         <div className="game-subtitle">Join the numbers and get to the 2048 tile!</div>
 
@@ -132,7 +140,7 @@ const App = () => {
             type="number"
             defaultValue={boardDim}
             onChange={handleChange}
-            style={{ width: 40 }}
+            style={{ width: 50 }}
           />
           <span style={{ marginLeft: 8, color: "black" }}>{boardDim} x {boardDim}</span>
         </div>
