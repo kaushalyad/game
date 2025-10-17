@@ -64,7 +64,7 @@ const Tile = ({ value, style, merged, scoreGain, animateMove, animateMerge }) =>
   return (
     <div
       className={tileClass}
-      style={{ backgroundColor: getTileColor(value), ...style, ...blastStyle, position: 'absolute' }}
+      style={{ backgroundColor: getTileColor(value), ...style, ...blastStyle }}
     >
       {value !== 0 ? value : ""}
       {showScore && scoreGain > 0 && (
