@@ -44,7 +44,10 @@ const App = () => {
       handleMove("ArrowLeft");
       alert("swipedLeft");
     },
-    onSwipedRight: () => handleMove("ArrowRight"),
+    onSwipedRight: () => {
+      handleMove("ArrowRight");
+      alert("ArrowRight");
+    },
     onSwipedUp: () => handleMove("ArrowUp"),
     onSwipedDown: () => handleMove("ArrowDown"),
   });

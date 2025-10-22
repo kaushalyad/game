@@ -1,3 +1,6 @@
+import { playSlideSound, playMergeSound } from "../utils/sound"; // adjust path
+
+
 let tileIdCounter = 1;
 
 
@@ -73,6 +76,8 @@ const slideLeft = (board, dim) => {
 
     let moved = false;
     let scoreGain = 0;
+    let merged = false; // track if any merge happens
+
     const newBoard = board.map((row, rowIdx) => {
         // Filter out empty tiles
         const filtered = row.filter((tile) => tile.value !== 0);
@@ -101,6 +106,7 @@ const slideLeft = (board, dim) => {
                 });
                 i += 2;
                 moved = true;
+                merged = true;
                 colIdx++;
             } else {
                 // Move tile
@@ -141,6 +147,8 @@ const slideLeft = (board, dim) => {
 
         return result;
     });
+    if (merged) playMergeSound();
+    if (moved) playSlideSound();
     return [newBoard, moved, scoreGain];
 };
 

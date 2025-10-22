@@ -55,7 +55,7 @@ const Tile = ({ value, style, merged, scoreGain, animateMove, animateMerge }) =>
   let tileClass = "tile";
   if (animateMove) tileClass += " tile-move";
   if (animateMerge) tileClass += " tile-merge";
-  if (animateMerge) tileClass += " red-blast";
+  if (animateMerge && isRedTile) tileClass += " red-blast";
 
   // Set blast color style for merge animation
   const blastStyle = animateMerge
