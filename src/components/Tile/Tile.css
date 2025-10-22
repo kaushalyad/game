@@ -20,7 +20,7 @@
 }
 
 .tile-move {
-    animation: tileMove 0.2s cubic-bezier(0.4, 0.8, 0.6, 1) forwards;
+    animation: tileMove 0.2s cubic-bezier(0.4, 0.8, 0.6, 1);
 }
 
 @keyframes tileMove {
