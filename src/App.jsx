@@ -118,60 +118,62 @@ const App = () => {
     else setBoardDim(Number(e.target.value))
   };
 
-
+  console.log(board);
   return (
     <>
-      <div className="app-header">
-      </div>
-      <div className="game-container">
-        {/* <div className="game-header">
+      <div {...handlers}>
+
+        <div className="app-header">
+        </div>
+        <div className="game-container">
+          {/* <div className="game-header">
           <div className="game-title">2048 GAME</div>
         </div> */}
 
-        <div className="game-subtitle">Join the numbers and get to the 2048 tile!</div>
+          <div className="game-subtitle">Join the numbers and get to the 2048 tile!</div>
 
-        <div className="scoreboard-container">
-          <div>
-            <ScoreBoard score={score} bestScore={bestScore} />
-            {showGain && <div className="score-gain">+{scoreGain}</div>}
+          <div className="scoreboard-container">
+            <div>
+              <ScoreBoard score={score} bestScore={bestScore} />
+              {showGain && <div className="score-gain">+{scoreGain}</div>}
+            </div>
+            <div className="game-controls">
+              <button onClick={startNewGame}>New Game</button>
+            </div>
           </div>
-          <div className="game-controls">
-            <button onClick={startNewGame}>New Game</button>
+
+          <div style={{ margin: '16px 0' }}>
+            <label htmlFor="board-dim">Board Tiles: </label>
+            <input
+              id="board-dim"
+              type="number"
+              defaultValue={boardDim}
+              onChange={handleChange}
+              style={{ width: 50 }}
+            />
+            <span style={{ marginLeft: 8, color: "black" }}>{boardDim} x {boardDim}</span>
           </div>
-        </div>
 
-        <div style={{ margin: '16px 0' }}>
-          <label htmlFor="board-dim">Board Tiles: </label>
-          <input
-            id="board-dim"
-            type="number"
-            defaultValue={boardDim}
-            onChange={handleChange}
-            style={{ width: 50 }}
-          />
-          <span style={{ marginLeft: 8, color: "black" }}>{boardDim} x {boardDim}</span>
-        </div>
-
-        <div {...handlers}>
           <Board board={board} boardSize={boardSize} boardDim={boardDim} />
-        </div>
-        {(gameOver || isWin) && (
-          <GameOverModal
-            isWin={isWin}
-            onRestart={startNewGame}
-            onContinue={() => setIsWin(false)}
-            onClose={() => {
-              setGameOver(false);
-              setIsWin(false);
-            }}
-          />
-        )}
+          {(gameOver || isWin) && (
+            <GameOverModal
+              isWin={isWin}
+              onRestart={startNewGame}
+              onContinue={() => setIsWin(false)}
+              onClose={() => {
+                setGameOver(false);
+                setIsWin(false);
+              }}
+            />
+          )}
 
-        <div className="play-instructions">
-          <span>HOW TO PLAY:</span> Use your arrow keys or swipe to move the tiles. When
-          two tiles with the same number touch, they merge into one. Get 2048 to win!
+          <div className="play-instructions">
+            <span>HOW TO PLAY:</span> Use your arrow keys or swipe to move the tiles. When
+            two tiles with the same number touch, they merge into one. Get 2048 to win!
+          </div>
         </div>
       </div>
+
     </>
   );
 };

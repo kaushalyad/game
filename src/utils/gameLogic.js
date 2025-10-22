@@ -62,12 +62,15 @@ export const moveBoard = (board, direction) => {
             tile.col = j;
         });
     });
+
     return [newBoard, moved, scoreGain];
+
 };
 
 
 
 const slideLeft = (board, dim) => {
+
     let moved = false;
     let scoreGain = 0;
     const newBoard = board.map((row, rowIdx) => {
@@ -131,14 +134,15 @@ const slideLeft = (board, dim) => {
                 prevCol: result.length
             });
         }
+
         // Check if row changed
+
         if (JSON.stringify(result.map(t => t.value)) !== JSON.stringify(row.map(t => t.value))) moved = true;
+
         return result;
     });
     return [newBoard, moved, scoreGain];
 };
-
-
 
 
 const rotateBoard = (board, times) => {
@@ -150,8 +154,6 @@ const rotateBoard = (board, times) => {
     }
     return newBoard;
 };
-
-
 
 
 export const checkGameOver = (board) => {
