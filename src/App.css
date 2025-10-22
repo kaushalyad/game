@@ -1,5 +1,5 @@
 .app-header {
-  height: 150px;
+  height: 100px;
   width: 99vw;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 450px;
+  min-width: 400px;
   width: 90%;
   max-width: 500px;
   margin-bottom: 15px;

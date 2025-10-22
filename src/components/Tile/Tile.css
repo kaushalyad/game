@@ -36,7 +36,7 @@
 }
 
 .tile-merge {
-    animation: tileBlast 0.35s cubic-bezier(0.4, 0.8, 0.6, 1) forwards;
+    animation: tileBlast 0.35s cubic-bezier(0.4, 0.8, 0.6, 1);
     z-index: 3;
 }
 

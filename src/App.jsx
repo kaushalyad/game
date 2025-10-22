@@ -60,7 +60,6 @@ const App = () => {
       setScoreGain(gain);
       setShowGain(true);
       setTimeout(() => setShowGain(false), 700);
-      playMergeSound();
     }
 
     if (moved) playSlideSound();
