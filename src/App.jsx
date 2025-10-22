@@ -40,7 +40,10 @@ const App = () => {
     startNewGame();
   }, [boardDim]);
   const handlers = useSwipeable({
-    onSwipedLeft: () => handleMove("ArrowLeft"),
+    onSwipedLeft: () => {
+      handleMove("ArrowLeft");
+      alert("swipedLeft");
+    },
     onSwipedRight: () => handleMove("ArrowRight"),
     onSwipedUp: () => handleMove("ArrowUp"),
     onSwipedDown: () => handleMove("ArrowDown"),
