@@ -35,7 +35,7 @@ export const addRandomTile = (board) => {
     const { i, j } = emptyCells[Math.floor(Math.random() * emptyCells.length)];
     board[i][j] = {
         id: tileIdCounter++,
-        value: Math.random() < 0.9 ? 2 : 4,
+        value: Math.random() < 0.98 ? 2 : 4,
         animateMove: true,
         animateMerge: false,
         merged: false,

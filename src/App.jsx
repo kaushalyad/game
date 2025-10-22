@@ -98,6 +98,7 @@ const App = () => {
   }, [board, score, bestScore, gameOver]);
 
   // Board dimension input handler
+
   const handleChange = (e) => {
     const val = Number(e.target.value);
     if (isNaN(val) || val < 2) {
@@ -137,7 +138,7 @@ const App = () => {
             onChange={handleChange}
             style={{ width: 50 }}
           />
-          <span style={{ marginLeft: 8 }}>{boardDim} x {boardDim}</span>
+          <span style={{ marginLeft: 8, color: "green" }}>{boardDim} x {boardDim}</span>
         </div>
 
         <Board board={board} boardSize={boardSize} boardDim={boardDim} />
